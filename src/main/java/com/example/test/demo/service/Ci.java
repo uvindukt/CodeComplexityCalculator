@@ -46,7 +46,7 @@ public class Ci {
 
     }
 
-    private int getNestedCount(String line, int y) {
+    private int getClasses(String line, int y) {
 
         Pattern pattern = Pattern.compile("(" + CiRegex.REGEX_CLASS + ")");
         Matcher matcher = pattern.matcher(line);
@@ -95,7 +95,7 @@ public class Ci {
 
     private void process() {
 
-        codeLines.forEach(line -> getNestedCount(line, 0));
+        codeLines.forEach(line -> getClasses(line, 0));
 
         Iterator<String> it = classNames.iterator();
 
@@ -140,7 +140,7 @@ public class Ci {
 
         process();
 
-        codeLines.forEach(line -> ci.add(getNestedCount(line, getCount(line))));
+        codeLines.forEach(line -> ci.add(getClasses(line, getCount(line))));
         return ci;
 
     }

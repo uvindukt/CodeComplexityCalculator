@@ -10,12 +10,12 @@ public class Cnc {
 
     private int i = 0;
     private ArrayList<String> codeLines;
-    private ArrayList<Integer> ctc;
+    private ArrayList<Integer> cnc;
 
     public Cnc(ArrayList<String> codeLines) {
 
         this.codeLines = codeLines;
-        this.ctc = new ArrayList<>(codeLines.size());
+        this.cnc = new ArrayList<>(codeLines.size());
 
     }
 
@@ -42,8 +42,8 @@ public class Cnc {
 
     public ArrayList<Integer> getCnc() {
 
-        codeLines.forEach(line -> ctc.add(getNestedCount(line)));
-        return ctc;
+        codeLines.forEach(line -> cnc.add(getNestedCount(line)));
+        return cnc;
 
     }
 

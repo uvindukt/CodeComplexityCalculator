@@ -9,12 +9,12 @@ import java.util.regex.Pattern;
 public class Cs {
 
     private ArrayList<String> codeLines;
-    private ArrayList<Integer> ctc;
+    private ArrayList<Integer> cs;
 
     public Cs(ArrayList<String> codeLines) {
 
         this.codeLines = codeLines;
-        this.ctc = new ArrayList<>(codeLines.size());
+        this.cs = new ArrayList<>(codeLines.size());
 
     }
 
@@ -50,8 +50,8 @@ public class Cs {
 
     public ArrayList<Integer> getCs() {
 
-        codeLines.forEach(line -> ctc.add(getSizeCount(line)));
-        return ctc;
+        codeLines.forEach(line -> cs.add(getSizeCount(line)));
+        return cs;
 
     }
 
