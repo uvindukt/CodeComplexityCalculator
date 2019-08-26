@@ -88,6 +88,7 @@ public class Cr {
                 z++;
             }
 
+
             if (insideMethod && line.contains("}")) {
                 if (z > 0)
                     z--;
