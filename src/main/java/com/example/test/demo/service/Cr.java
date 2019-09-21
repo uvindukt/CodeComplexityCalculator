@@ -62,8 +62,12 @@ public class Cr {
                 continue;
             } else {
                 String[] sub = line.split("\\(");
-                methodName = sub[0].replace("public", "").replace("private", "").replace("protected", "")
-                        .replace("static", "").replace("final", "").trim().split(" ")[1];
+                String x = sub[0].replace("public", "").replace("private", "").replace("protected", "")
+                        .replace("static", "").replace("final", "").trim();
+                if (x.split(" ").length > 1)
+                    methodName = x.split(" ")[1];
+                else
+                    methodName = x;
             }
 
         }

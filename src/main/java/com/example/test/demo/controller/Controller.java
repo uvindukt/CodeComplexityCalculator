@@ -337,7 +337,12 @@ public class Controller {
                 cc.add(line);
             }
 
-            return new ResponseEntity<>(cc, HttpStatus.OK);
+            int cp = cr.stream().mapToInt(value -> value).sum();
+
+            response.put("cc", cc);
+            response.put("cp", cp);
+
+            return new ResponseEntity<>(response, HttpStatus.OK);
 
         } catch (Exception e) {
 
